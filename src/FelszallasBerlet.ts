@@ -4,6 +4,10 @@ export default class FelszallasBerlet extends Felszallas {
     #tipus: string;
     #ervenyes: Date;
 
+    get ervenyesFelszallas(): boolean {
+        return this.#ervenyes.valueOf >= this.ido.valueOf;
+    }
+
     constructor(adatsor: string) {
         super(adatsor);
         const m: string[] = adatsor.split(" ");
