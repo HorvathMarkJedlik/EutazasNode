@@ -5,6 +5,10 @@ export default abstract class Felszallas {
     protected kartyaAzon: string;
     // protected: csak az osztályon belül és a származtatott
 
+    get ervenyesFelszallas(): boolean {
+        return false;
+    }
+
     constructor(adatsor: string) {
         const m: string[] = adatsor.split(" ");
         this.megalloSorszama = parseInt(m[0]);

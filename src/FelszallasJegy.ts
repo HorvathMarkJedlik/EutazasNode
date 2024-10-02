@@ -3,8 +3,8 @@ import Felszallas from "./Felszallas";
 export default class FelszallasJegy extends Felszallas {
     #jegyekSzama: number;
 
-    constructor(sor: string) {
-        super(sor);
-        this.#jegyekSzama = parseInt(sor.split(" ")[4]);
+    constructor(adatsor: string) {
+        super(adatsor);
+        this.#jegyekSzama = parseInt(adatsor.split(" ")[4]);
     }
 }

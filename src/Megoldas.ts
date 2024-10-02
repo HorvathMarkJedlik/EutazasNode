@@ -6,6 +6,10 @@ import FelszallasJegy from "./FelszallasJegy";
 export default class Megoldas {
     #utasdatok: Felszallas[] = [];
 
+    get felszallokSzama(): number {
+        return this.#utasdatok.length;
+    }
+
     constructor(forras: string) {
         fs.readFileSync(forras)
             .toString()

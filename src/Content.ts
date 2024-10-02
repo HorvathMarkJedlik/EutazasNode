@@ -1,5 +1,6 @@
 ﻿import fs from "fs"; // https://nodejs.org/docs/latest-v14.x/api/fs.html
 import http from "http"; // https://nodejs.org/docs/latest-v14.x/api/http.html
+import Megoldas from "./Megoldas";
 
 export default function content(req: http.IncomingMessage, res: http.ServerResponse): void {
     // favicon.ico kérés kiszolgálása:
@@ -21,6 +22,11 @@ export default function content(req: http.IncomingMessage, res: http.ServerRespo
     res.write("<body><form><pre>");
 
     // Kezd a kódolást innen -->
+
+    const mo = new Megoldas("utasadat.txt");
+    console.log(mo);
+
+    res.write(`2. feladat\nA buszra ${mo.felszallokSzama} utas akart felszállni.\n`);
 
     // <---- Fejezd be a kódolást
 
