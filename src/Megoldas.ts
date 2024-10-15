@@ -66,6 +66,32 @@ export default class Megoldas {
         return max;
     }
 
+    get MaxKeresSimple(): IMegallo {
+        const max: IMegallo = { felszallokSzama: -1, megalloSorszam: -1 };
+        let aktualisMegalllo: number = 0;
+        let aktFelszallo: number = 0;
+        for (const e of this.#utasdatok) {
+            if (e.megalloSorszam !== aktualisMegalllo || e === this.#utasdatok.at(-1)) {
+                if (e === this.#utasdatok.at(-1)) aktFelszallo++;
+                if (aktFelszallo > max.felszallokSzama) {
+                    max.felszallokSzama = aktFelszallo;
+                    max.megalloSorszam = aktualisMegalllo;
+                }
+                aktualisMegalllo = e.megalloSorszam;
+                aktFelszallo = 1;
+            } else aktFelszallo++;
+        }
+        return max;
+    }
+
+    get ingyenesUtazokSzama(): number {
+        return this.#utasdatok.filter(x => x.ingyenesUtazas).length;
+    }
+
+    get kedvezmenyesUtazokSzama(): number {
+        return this.#utasdatok.filter(x => x.kedvezmenyesUtazas).length;
+    }
+
     constructor(forras: string) {
         fs.readFileSync(forras)
             .toString()

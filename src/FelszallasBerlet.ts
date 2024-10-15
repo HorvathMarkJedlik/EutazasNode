@@ -8,6 +8,14 @@ export default class FelszallasBerlet extends Felszallas {
         return this.ido.valueOf() <= this.#ervenyes.valueOf();
     }
 
+    get ingyenesUtazas() {
+        return this.ervenyesFelszallas && ["NYP", "RVS", "GYK"].includes(this.#tipus);
+    }
+
+    get kedvezmenyesUtazas() {
+        return this.ervenyesFelszallas && ["TAB", "NYB"].includes(this.#tipus);
+    }
+
     constructor(adatsor: string) {
         super(adatsor);
         const m: string[] = adatsor.split(" ");

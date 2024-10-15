@@ -35,6 +35,8 @@ export default function content(req: http.IncomingMessage, res: http.ServerRespo
 
     res.write(`4. feladat\nA legtöbb utas (${mo.getMaxKeresMap.felszallokSzama} fő) a ${mo.getMaxKeresMap.megalloSorszam}. megállóban próbált felszállni.\n`);
 
+    res.write(`5. feladat\nIngyenesen utazók száma: ${mo.ingyenesUtazokSzama} fő\nA kedvezményesen utazók száma: ${mo.kedvezmenyesUtazokSzama} fő\n`);
+
     // <---- Fejezd be a kódolást
 
     res.write("</pre></form></body></html>");
