@@ -31,7 +31,7 @@ export default class Megoldas {
 
     get maxKeresArray(): IMegallo {
         const max: IMegallo = { felszallokSzama: -1, megalloSorszam: -1 };
-        const stat: number[] = new Array(30).fill(0);
+        const stat: number[] = new Array(30).fill(0); //30 elemű tömb, 0-val feltöltve
 
         for (const felszallas of this.#utasdatok) {
             stat[felszallas.megalloSorszam]++;
