@@ -36,6 +36,33 @@ export default class Megoldas {
         for (const felszallas of this.#utasdatok) {
             stat[felszallas.megalloSorszam]++;
         }
+        max.felszallokSzama = Math.max(...stat);
+        max.megalloSorszam = stat.indexOf(max.felszallokSzama);
+        return max;
+    }
+
+    get getMaxKeresMap(): IMegallo {
+        const max: IMegallo = { felszallokSzama: -1, megalloSorszam: -1 };
+        const stat: Map<number, number> = new Map<number, number>();
+        this.#utasdatok.forEach(e => {
+            if (stat.has(e.megalloSorszam)) {
+                const regErtek: number = stat.get(e.megalloSorszam) as number;
+                stat.set(e.megalloSorszam, regErtek + 1);
+            } else {
+                //Ha nincs ilyen kulcs
+                stat.set(e.megalloSorszam, 1);
+            }
+        });
+
+        //Maximum keresése klasszikus módón
+        max.felszallokSzama = 0;
+        for (const [key, value] of stat) {
+            if (value > max.felszallokSzama) {
+                max.felszallokSzama = value;
+                max.megalloSorszam = key;
+            }
+        }
+
         return max;
     }
 

@@ -31,6 +31,10 @@ export default function content(req: http.IncomingMessage, res: http.ServerRespo
 
     res.write(`3. feladat\nA buszra ${mo.evernytelenfelszallokLinq} utas nem szállhatott fel.\n`);
 
+    res.write(`4. feladat\nA legtöbb utas (${mo.maxKeresArray.felszallokSzama} fő) a ${mo.maxKeresArray.megalloSorszam}. megállóban próbált felszállni.\n`);
+
+    res.write(`4. feladat\nA legtöbb utas (${mo.getMaxKeresMap.felszallokSzama} fő) a ${mo.getMaxKeresMap.megalloSorszam}. megállóban próbált felszállni.\n`);
+
     // <---- Fejezd be a kódolást
 
     res.write("</pre></form></body></html>");

@@ -6,7 +6,7 @@ export default abstract class Felszallas {
     // protected: csak az osztályon belül és a származtatott
 
     public get megalloSorszam(): number {
-        return this.megalloSorszam;
+        return this.megalloSorszama;
     }
 
     get ervenyesFelszallas(): boolean {
