@@ -5,6 +5,10 @@ export default abstract class Felszallas {
     protected kartyaAzon: string;
     // protected: csak az osztályon belül és a származtatott
 
+    public get megalloSorszam(): number {
+        return this.megalloSorszam;
+    }
+
     get ervenyesFelszallas(): boolean {
         return false;
     }

@@ -24,9 +24,12 @@ export default function content(req: http.IncomingMessage, res: http.ServerRespo
     // Kezd a kódolást innen -->
 
     const mo = new Megoldas("utasadat.txt");
-    console.log(mo);
 
     res.write(`2. feladat\nA buszra ${mo.felszallokSzama} utas akart felszállni.\n`);
+
+    res.write(`3. feladat\nA buszra ${mo.evernytelenfelszallok} utas nem szállhatott fel.\n`);
+
+    res.write(`3. feladat\nA buszra ${mo.evernytelenfelszallokLinq} utas nem szállhatott fel.\n`);
 
     // <---- Fejezd be a kódolást
 

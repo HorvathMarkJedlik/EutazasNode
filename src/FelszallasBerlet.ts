@@ -5,7 +5,7 @@ export default class FelszallasBerlet extends Felszallas {
     #ervenyes: Date;
 
     get ervenyesFelszallas(): boolean {
-        return this.#ervenyes.valueOf >= this.ido.valueOf;
+        return this.ido.valueOf() <= this.#ervenyes.valueOf();
     }
 
     constructor(adatsor: string) {
